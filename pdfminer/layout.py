@@ -77,7 +77,7 @@ def make_path_segment(operator: str, points: Sequence[Point]) -> LTPathSegment:
         return LTPathSegment2("y", points[0], points[1])
     if operator == "c":
         return LTPathSegment3("c", points[0], points[1], points[2])
-    raise ValueError(f"Unrecognized path segment: {operator!r} {points!r}")
+    raise PDFValueError(f"Unrecognized path segment: {operator!r} {points!r}")
 
 
 class IndexAssigner:
